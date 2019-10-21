@@ -35,7 +35,7 @@ while baton > 1
 			echo "Machine win !"	
 do
 
-if machine_victoire == 0	
+if machine_victoire == 0
 	you loose
 		foreach tour[x]
 			bill_$x--
