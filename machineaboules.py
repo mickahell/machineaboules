@@ -13,27 +13,34 @@ blue = 3
 red = 5
 green = 7
 
-machine_tour = 0
-machine_humain = 0
+machine_tour = True
+humain_tour = False
 
-echo "Qui commence ? - Machine commence ? y/n"
+print("Qui commence ? - Machine commence ? y/n")
 
-while baton > 1
-	if machine_tour == 1
-		box_$baton = [blue, red, green]
-		bill_$baton = random.box_1
-		baton = baton - {3 || 2 || 1}
-	if humain_tour == 1
-		echo "Il reste $baton. Combien de baton veux tu retirer, 3, 2 ou 1 ?"
+while baton > 1:
+        if machine_tour == True:
+                print("Tour de la machine")
+#               box_$baton = [blue, red, green]
+#               bill_$baton = random.box_baton
+                baton = baton - random.randrange(1, 4)
+                print(baton)
+        if humain_tour == True:
+                print("Tour de l'humain")
+#               print("Il reste " baton ". Combien de baton veux tu retirer, 3, 2 ou 1 ?")
+                print(baton, "il reste")
 
-	if baton == 1
-		if machine_tour == 1
-			machine_victoire = 0
-			echo "Machine loose !"
-		if humain_tour == 1
-			machine_victoire = 1
-			echo "Machine win !"	
-do
+        if baton <= 1:
+                if machine_tour == True:
+                        machine_victoire = 0
+                        print("Machine loose !")
+                if humain_tour == True:
+                        machine_victoire = 1
+                        print("Machine win !")
+        else:
+                machine_tour = not machine_tour
+                humain_tour = not humain_tour
+
 
 if machine_victoire == 0
 	you loose
