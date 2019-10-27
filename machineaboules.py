@@ -71,4 +71,4 @@ while jouer:
     else:
         clear = "\n" * 10
         print(clear)
-        
+
