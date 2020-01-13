@@ -1,1 +1,1 @@
-# machineaboules
+# jeu de nim
