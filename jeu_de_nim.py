@@ -1,11 +1,9 @@
 # Faire le jeu des 3 batons, entre humain et machine
 # Règle, chaque joueur retire à son tour 3, 2 ou 1 baton. Celui qui prend le dernier baton à perdu
 
-##La machine doit apprendre : 
-##	Si elle perd retirer chaque billes qu'elle à joué de chacun de ses tableaux
-##	Si elle gagne ajouter une bille qu'elle a joué à chacune de ses tableaux
+## Si la machine commence, vous avez déjà perdu !!!
 
-##Creer un graphe de son avancement de ses victoires/défaites
+##Creer un graphe de son avancement de ses victoires/défaites (maybe I'll do it (or not))
 
 
 import random
@@ -33,9 +31,10 @@ while jouer:
     # Jeu
     while baton >= 1:
         if machine_tour:
-            #       box_$baton = [blue, red, green]
-            #       bill_$baton = random.box_baton
-            nbbaton = random.randrange(1, 4)
+            if baton % 4 != 0:
+                nbbaton = baton % 4 - 1
+            else:
+                nbbaton = random.randrange(1, 4)
             print("La machine prend : ", nbbaton)
             baton -= nbbaton
         if humain_tour:
@@ -53,16 +52,6 @@ while jouer:
             dessin.dessin(baton)
             machine_tour = not machine_tour
             humain_tour = not humain_tour
-
-    # if machine_victoire == 0
-    # 	you loose
-    # 		foreach tour[x]
-    # 			bill_$x--
-    #
-    # if machine_victoire == 1
-    # 	you win
-    # 		foreach tour[x]
-    # 			bill_$x++
 
     # Nouvelle partie ?
     again = str(input("Autre partie ? (y/n) --> "))
