@@ -31,8 +31,10 @@ while jouer:
     # Jeu
     while baton >= 1:
         if machine_tour:
-            if baton % 4 != 0:
+            if baton % 4 != 0 and baton % 4 != 1:
                 nbbaton = baton % 4 - 1
+            elif baton % 4 == 0:
+                nbbaton = 3
             else:
                 nbbaton = random.randrange(1, 4)
             print("La machine prend : ", nbbaton)
